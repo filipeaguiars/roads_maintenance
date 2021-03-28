@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roads_maintenance/screens/history.dart';
 import 'package:roads_maintenance/screens/home.dart';
+import 'package:roads_maintenance/screens/manutencao.dart';
 
 
 class Bar extends StatefulWidget {
@@ -26,7 +27,8 @@ class _BarState extends State<Bar> {
 
     _pages = [
       Home(),
-      History()
+      History(),
+      Manutencao(),
     ];
     _pageController = PageController(initialPage: _selectedPageIndex);
 
