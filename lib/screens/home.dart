@@ -7,35 +7,57 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int counter = 50;
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      child: Container(
-        alignment: Alignment.topLeft,
-        color: Colors.black,
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            TextButton(
-                  onPressed: (){
-                    setState(() {
-                      counter++;
-                      print(counter);
-                    });
-                  },
-                  child: Text("Preventivo / Manutenção",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white
-                    ),
-                  ),
+          mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  child:
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 62, 43, 100)
+                      ),
+                          onPressed: (){
+                          Navigator.of(context).pushNamed('/manut');
+                          },
+                          child: Text("Preventivo / Manutenção",
+                            style: TextStyle(
+                                fontSize: 25,
+                            ),
+                          ),
+                        ),
                 ),
-          ],
+                Padding(padding: EdgeInsets.all(5)),
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  child:
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 62, 43, 100)
+                      ),
+                      onPressed: (){
+                        Navigator.of(context).pushNamed('/manut');
+                      },
+                      child: Text("Inspeção TAE",
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ),
+                ),
+              ],
         ),
-        ),
+      ),
     );
   }
 }

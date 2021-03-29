@@ -17,7 +17,7 @@ class _BarState extends State<Bar> {
 
   var _selectedPageIndex;
   List<Widget> _pages;
-  PageController _pageController;
+  PageController _pageController = PageController();
 
   @override
   void initState(){
@@ -44,7 +44,7 @@ class _BarState extends State<Bar> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Color.fromARGB(255, 103, 55, 158),
         title: Text("Conservação de Rodovias"),
         centerTitle: true,
       ),
